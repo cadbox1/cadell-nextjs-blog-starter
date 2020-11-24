@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Container } from "../cadell-nextjs-blog-core/components/Container";
-import { Layout } from "../cadell-nextjs-blog-core/components/Layout";
-import { DateFormatter } from "../cadell-nextjs-blog-core/components/DateFormatter";
+import { Layout } from "../components/Layout";
+import { Container } from "@theme-ui/components";
+import { DateFormatter } from "../components/DateFormatter";
 import { BasicPost, getPosts } from "../cadell-nextjs-blog-core/api";
 import { CMS_NAME } from ".";
 

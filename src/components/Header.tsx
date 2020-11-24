@@ -1,8 +1,8 @@
 /** @jsx jsx */
+import { jsx, Theme } from "theme-ui";
 import Link from "next/link";
-import { jsx } from "theme-ui";
-import { useColorMode } from "theme-ui";
-import { CMS_NAME } from "../../pages";
+import { useColorMode, Link as ThemedLink } from "theme-ui";
+import { CMS_NAME } from "../pages";
 
 const navItemStyles = {
 	mx: 12,
@@ -36,9 +36,11 @@ export function Header() {
 			}}
 		>
 			<div sx={{ mx: -12 }}>
-				<Link href="/">{CMS_NAME}</Link>
-				<Link href={`/blog`} sx={navItemStyles}>
-					Blog
+				<Link href="/" passHref>
+					<ThemedLink sx={navItemStyles}>{CMS_NAME}</ThemedLink>
+				</Link>
+				<Link href="/blog" passHref>
+					<ThemedLink sx={navItemStyles}>Blog</ThemedLink>
 				</Link>
 			</div>
 

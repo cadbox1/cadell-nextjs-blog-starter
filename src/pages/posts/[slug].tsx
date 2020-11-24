@@ -1,9 +1,8 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-import { Container } from "../../cadell-nextjs-blog-core/components/Container";
-import { Layout } from "../../cadell-nextjs-blog-core/components/Layout";
-import { DateFormatter } from "../../cadell-nextjs-blog-core/components/DateFormatter";
+import { Layout } from "../../components/Layout";
+import { DateFormatter } from "../../components/DateFormatter";
 import {
 	BasicPost,
 	getPostBySlug,
@@ -11,6 +10,7 @@ import {
 } from "../../cadell-nextjs-blog-core/api";
 import markdownToHtml from "../../cadell-nextjs-blog-core/markdownToHtml";
 import { CMS_NAME } from "..";
+import { Container } from "theme-ui";
 
 interface PostProps {
 	post: BasicPost;
