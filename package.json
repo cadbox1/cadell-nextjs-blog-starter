@@ -1,24 +1,29 @@
 {
-  "name": "blog-starter",
+  "name": "cadell-nextjs-blog-starter",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "typescript": "tsc"
   },
   "dependencies": {
-    "classnames": "2.2.6",
     "date-fns": "2.10.0",
     "gray-matter": "4.0.2",
-    "next": "latest",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "next": "10.0.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "remark": "11.0.2",
-    "remark-html": "10.0.0"
+    "remark-html": "10.0.0",
+    "theme-ui": "0.3.4",
+    "typeface-source-sans-pro": "1.1.13"
   },
   "devDependencies": {
-    "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.4.0"
-  },
-  "license": "MIT"
+    "@types/node": "^14.0.1",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "prettier": "2.2.0",
+    "typescript": "4.1.2"
+  }
 }
