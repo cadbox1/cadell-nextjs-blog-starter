@@ -1,13 +1,14 @@
 /** @jsx jsx */
-import { jsx, Theme } from "theme-ui";
+import { jsx } from "theme-ui";
 import Link from "next/link";
 import { useColorMode, Link as ThemedLink } from "theme-ui";
 import { CMS_NAME } from "../pages";
+import { NavLink } from "./NavLink";
 
 const navItemStyles = {
-	mx: 12,
+	mx: 3,
 	fontWeight: 600,
-	fontSize: 22,
+	fontSize: 2,
 	textDecoration: "none",
 	color: "text",
 };
@@ -28,20 +29,21 @@ export function Header() {
 		<nav
 			sx={{
 				display: "flex",
-				maxWidth: `container`,
-				mx: `auto`,
-				px: 3,
-				py: 2,
+				alignItems: "center",
 				mb: 6,
 			}}
 		>
-			<div sx={{ mx: -12 }}>
-				<Link href="/" passHref>
-					<ThemedLink sx={navItemStyles}>{CMS_NAME}</ThemedLink>
-				</Link>
-				<Link href="/blog" passHref>
-					<ThemedLink sx={navItemStyles}>Blog</ThemedLink>
-				</Link>
+			<div sx={{ mx: -navItemStyles.mx }}>
+				<NavLink href="/" linkSx={navItemStyles} activeSx={navItemActiveStyles}>
+					{CMS_NAME}
+				</NavLink>
+				<NavLink
+					href="/blog"
+					linkSx={navItemStyles}
+					activeSx={navItemActiveStyles}
+				>
+					Blog
+				</NavLink>
 			</div>
 
 			<div sx={{ ml: "auto" }}>
@@ -49,7 +51,7 @@ export function Header() {
 					onClick={toggleColorMode}
 					sx={{
 						fontWeight: "bold",
-						fontSize: 16,
+						fontSize: 1,
 						backgroundColor: "muted",
 						py: 3,
 						px: 4,
