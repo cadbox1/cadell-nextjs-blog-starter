@@ -46,4 +46,4 @@ I wanted a starter blog that used theme-ui for styling and typescript with minum
 - [https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript)
 - [https://github.com/vercel/next.js/tree/canary/examples/active-class-name](https://github.com/vercel/next.js/tree/canary/examples/active-class-name).
 - [https://github.com/hashicorp/next-mdx-remote/pull/35](https://github.com/hashicorp/next-mdx-remote/pull/35)
-- (https://nextjs.org/docs/advanced-features/static-html-export)[https://nextjs.org/docs/advanced-features/static-html-export].
+- [https://nextjs.org/docs/advanced-features/static-html-export](https://nextjs.org/docs/advanced-features/static-html-export).
