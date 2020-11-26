@@ -37,6 +37,7 @@ I wanted a starter blog that used theme-ui for styling and typescript with minum
 - Submit a PR to add this project to the nextjs examples
 - Check if images work in markdown files.
 - Check if MDX works.
+- Prism code highlighting.
 - Excerpts.
 
 ## Refereneces
