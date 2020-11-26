@@ -1,5 +1,9 @@
 # Cadell's Nextjs Blog Starter
 
+## Why
+
+I wanted a starter blog that used theme-ui for styling and typescript with minumal code.
+
 ## Scripts
 - `npm install` - install dependencies.
 - `npm run dev:watch` - start the development server and watch the posts folder for changes.
