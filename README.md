@@ -1,5 +1,8 @@
 # Cadell's Nextjs Blog Starter
 
+## Demo
+[cadells-nextjs-blog-starter.netlify.app](cadells-nextjs-blog-starter.netlify.app)
+
 ## Why
 
 I wanted a starter blog that used theme-ui for styling and typescript with minumal code.
@@ -10,6 +13,7 @@ I wanted a starter blog that used theme-ui for styling and typescript with minum
 - `npm run dev` - start the development server.
 - `npm run build` - build assets.
 - `npm run start` - serve built assets.
+- `npm run export` - export to static html.
 - `npm run typescript` - check types.
 
 ## Getting Started
@@ -41,3 +45,4 @@ I wanted a starter blog that used theme-ui for styling and typescript with minum
 - [https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript)
 - [https://github.com/vercel/next.js/tree/canary/examples/active-class-name](https://github.com/vercel/next.js/tree/canary/examples/active-class-name).
 - [https://github.com/hashicorp/next-mdx-remote/pull/35](https://github.com/hashicorp/next-mdx-remote/pull/35)
+- (https://nextjs.org/docs/advanced-features/static-html-export)[https://nextjs.org/docs/advanced-features/static-html-export].
