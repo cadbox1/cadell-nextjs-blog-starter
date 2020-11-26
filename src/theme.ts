@@ -1,6 +1,7 @@
+import { Theme } from "theme-ui";
 import "typeface-source-sans-pro";
 
-export default {
+const theme: Theme = {
 	useColorSchemeMediaQuery: true,
 	fonts: {
 		body:
@@ -87,7 +88,6 @@ export default {
 			fontSize: 0,
 		},
 		p: {
-			color: "text",
 			fontFamily: "body",
 			fontWeight: "body",
 			lineHeight: "body",
@@ -129,3 +129,4 @@ export default {
 		},
 	},
 };
+export default theme;

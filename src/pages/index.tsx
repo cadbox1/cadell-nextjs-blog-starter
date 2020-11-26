@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Container } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import { Layout } from "../components/Layout";
 import Head from "next/head";
 
@@ -16,16 +16,14 @@ export default function Index() {
 					sx={{
 						maxWidth: "container",
 						mx: "auto",
-						mt: 8,
+						mt: 7,
 					}}
 				>
 					<Styled.h1 sx={{ fontSize: 6, mb: 4 }}>
-						I build awesome teams that build awesome products.
+						This is my cool website.
 					</Styled.h1>
 					<Styled.p sx={{ fontSize: 3 }}>
-						I'm a developer that takes customer problems from product
-						requirements and technical design, through development and
-						deployment, all the way to validation and customer support.
+						My cool website has a dark mode and a blog and uses Nextjs.
 					</Styled.p>
 				</div>
 			</Layout>

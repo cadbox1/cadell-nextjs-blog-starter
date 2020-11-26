@@ -2,6 +2,8 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
+// I think this should be a reusable package.
+
 const postsDirectory = join(process.cwd(), "posts");
 
 export function getPostSlugs() {
@@ -16,16 +18,17 @@ export interface BasicPost {
 }
 
 export function getPostBySlug(slug: string): BasicPost {
-	const realSlug = slug.replace(/\.md$/, "");
-	const fullPath = join(postsDirectory, `${realSlug}.md`);
+	const slugWithoutExtension = slug.replace(/\.md$/, "");
+	const fullPath = join(postsDirectory, `${slugWithoutExtension}.md`);
 	const fileContents = fs.readFileSync(fullPath, "utf8");
+
 	const { data, content } = matter(fileContents);
 
 	// @ts-ignore
 	return {
 		...data,
 		content,
-		slug: realSlug,
+		slug: slugWithoutExtension,
 		dateString: data.date,
 	};
 }

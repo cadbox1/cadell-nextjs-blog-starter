@@ -4,19 +4,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
+    "dev:watch": "next-remote-watch ./posts",
     "build": "next build",
     "start": "next start",
     "typescript": "tsc"
   },
   "dependencies": {
-    "@theme-ui/components": "0.3.4",
     "date-fns": "2.10.0",
-    "gray-matter": "4.0.2",
+    "gray-matter": "^4.0.2",
     "next": "10.0.2",
+    "next-mdx-remote": "^1.0.0",
+    "next-remote-watch": "^0.2.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "remark": "11.0.2",
-    "remark-html": "10.0.0",
     "theme-ui": "0.3.4",
     "typeface-source-sans-pro": "1.1.13"
   },
@@ -24,7 +24,6 @@
     "@types/node": "^14.0.1",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "@types/theme-ui__components": "^0.2.6",
     "prettier": "2.2.0",
     "typescript": "4.1.2"
   }

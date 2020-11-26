@@ -8,7 +8,7 @@ export interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
 	return (
-		<div sx={{ maxWidth: "container", mx: "auto", px: 3, py: 3 }}>
+		<div sx={{ maxWidth: "container", mx: "auto", px: 3, py: 3, mb: 8 }}>
 			<Header />
 			<main>{children}</main>
 		</div>

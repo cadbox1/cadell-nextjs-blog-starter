@@ -2,10 +2,10 @@
 import { jsx } from "theme-ui";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { Link as ThemeUiLink, ThemeUICSSObject } from "theme-ui";
+import { ThemeUICSSObject } from "theme-ui";
 
 // based on: https://github.com/vercel/next.js/blob/master/examples/active-class-name/components/ActiveLink.js
-// this probably should be part of core
+// I think this should be a reusable package.
 
 export interface NavLinkProps {
 	href: string;
@@ -21,7 +21,7 @@ export function NavLink({ href, children, linkSx, activeSx }: NavLinkProps) {
 
 	return (
 		<Link href={href} passHref>
-			<ThemeUiLink sx={{ ...linkSx, ...addedSx }}>{children}</ThemeUiLink>
+			<a sx={{ ...linkSx, ...addedSx }}>{children}</a>
 		</Link>
 	);
 }

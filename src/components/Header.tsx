@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import Link from "next/link";
-import { useColorMode, Link as ThemedLink } from "theme-ui";
+import { useColorMode } from "theme-ui";
 import { CMS_NAME } from "../pages";
 import { NavLink } from "./NavLink";
 
@@ -30,7 +29,7 @@ export function Header() {
 			sx={{
 				display: "flex",
 				alignItems: "center",
-				mb: 6,
+				pb: 5,
 			}}
 		>
 			<div sx={{ mx: -navItemStyles.mx }}>
@@ -51,7 +50,7 @@ export function Header() {
 					onClick={toggleColorMode}
 					sx={{
 						fontWeight: "bold",
-						fontSize: 1,
+						fontSize: 0,
 						backgroundColor: "muted",
 						py: 3,
 						px: 4,
