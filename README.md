@@ -1,7 +1,7 @@
 # Cadell's Nextjs Blog Starter
 
 ## Demo
-[cadells-nextjs-blog-starter.netlify.app](cadells-nextjs-blog-starter.netlify.app)
+[cadells-nextjs-blog-starter.netlify.app](https://cadells-nextjs-blog-starter.netlify.app)
 
 ## Why
 
