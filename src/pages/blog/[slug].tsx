@@ -1,26 +1,29 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Themed, ThemeProvider } from "theme-ui";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-// @ts-ignore
 import hydrate from "next-mdx-remote/hydrate";
-// @ts-ignore
 import renderToString from "next-mdx-remote/render-to-string";
 import { Layout } from "../../components/Layout";
 import { DateFormatter } from "../../components/DateFormatter";
 import { BasicPost, getPostBySlug, getPosts } from "../../lib/api";
-import { AppThemeProvider } from "../_app";
 import { CMS_NAME } from "..";
+import theme from "../../theme";
+import { MdxRemote } from "next-mdx-remote/types";
 
 interface PostProps {
 	post: BasicPost;
-	source: string;
+	source: MdxRemote.Source;
+}
+
+const provider = {
+	component: ThemeProvider,
+	props: { theme }
 }
 
 const components = {
-	wrapper: (props: any) => <AppThemeProvider {...props} />,
-	p: (props: any) => <Styled.p {...props} sx={{ fontSize: 1 }} />,
+	p: (props: any) => <Themed.p {...props} sx={{ fontSize: 1 }} />,
 };
 
 export default function Post({ post, source }: PostProps) {
@@ -31,7 +34,7 @@ export default function Post({ post, source }: PostProps) {
 
 	const { title, dateString } = post;
 
-	const content = hydrate(source, { components });
+	const content = hydrate(source, { components, provider });
 
 	return (
 		<>
@@ -42,7 +45,7 @@ export default function Post({ post, source }: PostProps) {
 			</Head>
 			<Layout>
 				<article>
-					<Styled.h1 sx={{ mb: 4 }}>{title}</Styled.h1>
+					<Themed.h1 sx={{ mb: 4 }}>{title}</Themed.h1>
 					<DateFormatter dateString={dateString} />
 					<div>{content}</div>
 				</article>
@@ -66,6 +69,7 @@ export async function getStaticProps({ params }: Params) {
 			rehypePlugins: [],
 		},
 		components,
+		provider,
 		scope: undefined,
 	});
 
