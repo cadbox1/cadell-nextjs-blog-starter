@@ -1,4 +1,6 @@
+/** @jsxRuntime classic /
 /** @jsx jsx */
+import React from "react";
 import { jsx, Themed, ThemeProvider } from "theme-ui";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
@@ -9,22 +11,12 @@ import { Layout } from "../../components/Layout";
 import { DateFormatter } from "../../components/DateFormatter";
 import { BasicPost, getPostBySlug, getPosts } from "../../lib/api";
 import { CMS_NAME } from "..";
-import theme from "../../theme";
 import { MdxRemote } from "next-mdx-remote/types";
 
 interface PostProps {
 	post: BasicPost;
 	source: MdxRemote.Source;
 }
-
-const provider = {
-	component: ThemeProvider,
-	props: { theme }
-}
-
-const components = {
-	p: (props: any) => <Themed.p {...props} sx={{ fontSize: 1 }} />,
-};
 
 export default function Post({ post, source }: PostProps) {
 	const router = useRouter();
@@ -34,7 +26,7 @@ export default function Post({ post, source }: PostProps) {
 
 	const { title, dateString } = post;
 
-	const content = hydrate(source, { components, provider });
+	const content = hydrate(source);
 
 	return (
 		<>
@@ -68,8 +60,6 @@ export async function getStaticProps({ params }: Params) {
 			remarkPlugins: [],
 			rehypePlugins: [],
 		},
-		components,
-		provider,
 		scope: undefined,
 	});
 

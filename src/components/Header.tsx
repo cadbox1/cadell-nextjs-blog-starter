@@ -1,4 +1,6 @@
+/** @jsxRuntime classic /
 /** @jsx jsx */
+import React from "react";
 import { jsx } from "theme-ui";
 import { useColorMode } from "theme-ui";
 import { CMS_NAME } from "../pages";

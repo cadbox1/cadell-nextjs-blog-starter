@@ -1,5 +1,7 @@
+/** @jsxRuntime classic /
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import React from "react";
+import { jsx, Themed } from "theme-ui";
 import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "../../components/Layout";
@@ -19,18 +21,24 @@ export default function Index({ posts }: IndexProps) {
 			</Head>
 			<Layout>
 				<section>
-					{posts.map(({ slug, title, dateString }) => (
-						<div sx={{ mb: 6 }}>
-							<Styled.h2 sx={{ mb: 2 }}>
-								<Link href={`/blog/${slug}`} passHref>
-									<Styled.a sx={{ color: "text" }}>{title}</Styled.a>
-								</Link>
-							</Styled.h2>
-							<span>
-								<DateFormatter dateString={dateString} />
-							</span>
-						</div>
-					))}
+					{[...posts]
+						.sort(
+							(a, b) =>
+								new Date(b.dateString).getTime() -
+								new Date(a.dateString).getTime()
+						)
+						.map(({ slug, title, dateString }) => (
+							<div sx={{ mb: 6 }}>
+								<Themed.h2 sx={{ mb: 2 }}>
+									<Link href={`/blog/${slug}`} passHref>
+										<Themed.a sx={{ color: "text" }}>{title}</Themed.a>
+									</Link>
+								</Themed.h2>
+								<span>
+									<DateFormatter dateString={dateString} />
+								</span>
+							</div>
+						))}
 				</section>
 			</Layout>
 		</>

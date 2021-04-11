@@ -29,9 +29,12 @@ const theme: Theme = {
 	sizes: {
 		container: 850,
 	},
-	fontSizes: [16, 18, 21, 24, 32, 36, 44],
+	fontSizes: [16, 18, 20, 24, 28, 36, 44],
 	lineHeights: {
-		body: 1.7,
+		// I want a line height of 32px for the body
+		// because that's a nice number for incremental margings.
+		// The font size for the body is 20px so 32/20 = 1.6
+		body: 1.6,
 		heading: 1.2,
 	},
 	fontWeights: {
@@ -51,6 +54,8 @@ const theme: Theme = {
 			lineHeight: "heading",
 			fontWeight: "heading",
 			fontSize: 5,
+			marginTop: 6,
+			marginBottom: 2,
 		},
 		h2: {
 			color: "text",
@@ -58,6 +63,8 @@ const theme: Theme = {
 			lineHeight: "heading",
 			fontWeight: "heading",
 			fontSize: 4,
+			marginTop: 6,
+			marginBottom: 0,
 		},
 		h3: {
 			color: "text",
@@ -66,31 +73,13 @@ const theme: Theme = {
 			fontWeight: "heading",
 			fontSize: 3,
 		},
-		h4: {
-			color: "text",
-			fontFamily: "heading",
-			lineHeight: "heading",
-			fontWeight: "heading",
-			fontSize: 2,
-		},
-		h5: {
-			color: "text",
-			fontFamily: "heading",
-			lineHeight: "heading",
-			fontWeight: "heading",
-			fontSize: 1,
-		},
-		h6: {
-			color: "text",
-			fontFamily: "heading",
-			lineHeight: "heading",
-			fontWeight: "heading",
-			fontSize: 0,
-		},
 		p: {
 			fontFamily: "body",
 			fontWeight: "body",
 			lineHeight: "body",
+			fontSize: 2,
+			marginTop: 3,
+			marginBottom: 0,
 		},
 		a: {
 			color: "primary",
@@ -99,6 +88,17 @@ const theme: Theme = {
 				textDecoration: "underline",
 			},
 		},
+		ul: {
+			fontSize: 2,
+			marginTop: 3,
+			marginBottom: 0,
+			paddingLeft: 6,
+			listStyleType: "disc",
+			ul: {
+				marginTop: 0,
+			},
+		},
+		// not sure where the rest of these styles came from but they can stay
 		pre: {
 			fontFamily: "monospace",
 			overflowX: "auto",

@@ -1,4 +1,6 @@
+/** @jsxRuntime classic /
 /** @jsx jsx */
+import React from "react";
 import { jsx, Styled } from "theme-ui";
 import { Layout } from "../components/Layout";
 import Head from "next/head";
