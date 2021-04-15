@@ -12,6 +12,7 @@ import { DateFormatter } from "../../components/DateFormatter";
 import { BasicPost, getPostBySlug, getPosts } from "../../lib/api";
 import { CMS_NAME } from "..";
 import { MdxRemote } from "next-mdx-remote/types";
+import theme from "../../theme";
 
 interface PostProps {
 	post: BasicPost;
@@ -59,6 +60,10 @@ export async function getStaticProps({ params }: Params) {
 		mdxOptions: {
 			remarkPlugins: [],
 			rehypePlugins: [],
+		},
+		provider: {
+			component: ThemeProvider,
+			props: { theme },
 		},
 		scope: undefined,
 	});
